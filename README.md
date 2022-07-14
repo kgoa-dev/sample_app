@@ -2,7 +2,7 @@
 
 これは、次の教材で作られたサンプルアプリケーションです。
 [*Ruby on Rails チュートリアル*](https://railstutorial.jp/)
-（第7版）
+（第6版）
 [Michael Hartl](https://www.michaelhartl.com/) 著
 
 ## ライセンス
@@ -17,9 +17,7 @@
 その後、次のコマンドで必要になる RubyGems をインストールします。
 
 ```
-$ gem install bundler -v 2.3.11
-$ bundle _2.3.11_ config set --local without 'production'
-$ bundle _2.3.11_ install
+$ bundle install --without production
 ```
 
 その後、データベースへのマイグレーションを実行します。
@@ -34,7 +32,7 @@ $ rails db:migrate
 $ rails test
 ```
 
-テストが無事にパスしたら、Railsサーバーを立ち上げる準備が整っているはずです。
+テストが無事に通ったら、Railsサーバーを立ち上げる準備が整っているはずです。
 
 ```
 $ rails server
