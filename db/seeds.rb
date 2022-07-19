@@ -20,9 +20,16 @@ User.create!(name:  name,
     activated_at: Time.zone.now)
 end
 
-# ユーザーの一部を対象にマイクロポストを生成する
+# マイクロポスト
 users = User.order(:created_at).take(6)
 50.times do
   content = Faker::Lorem.sentence(word_count: 5)
   users.each { |user| user.microposts.create!(content: content) }
 end
+
+users = User.all
+user  = users.first
+followings = users[2..50]
+followers = users[3..40]
+followings.each { |followed| user.follow(followed) }
+followers.each { |follower| follower.follow(user) }
